@@ -44,7 +44,11 @@ connection.query('SELECT 1 + 1 AS solution', (err, result)=>{
 })
 */
 
-app.get("/", (req, res)=>{
+app.get('/', (req, res)=>{
+    res.json({message: 'API route / test'});
+});
+
+app.get("/data", (req, res)=>{
     connection.query('SELECT * FROM Usuarios', (error, results)=>{
         if(error)
             res.status(500).json({
