@@ -15,7 +15,7 @@ Este proyecto es una API RESTful que implementa las operaciones CRUD (Crear, Lee
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/itsFDavid/Topicos-Avanzados/tree/main/nodeJs/API
+    git clone https://github.com/itsFDavid/API-Topicos.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
