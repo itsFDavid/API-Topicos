@@ -2,10 +2,11 @@
 
 # Despliegue
 Se utilizo render para desplegar esta API la cual se encuentra en la siguiente liga
-```bash
-   https://api-topicos-77j7.onrender.com/
-```
+
+  [liga de la API](https://api-topicos-77j7.onrender.com/)
 Se utilizo netlifly para desplegar la pagina web que consume la API:
+
+  [liga de la Web](https://rococo-caramel-72d2f1.netlify.app/)
 
 ## Descripción
 
