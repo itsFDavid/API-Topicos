@@ -6,7 +6,7 @@ Se utilizo netlifly para desplegar la pagina web que consume la API:
 
   1.- [liga de la API](https://api-topicos-77j7.onrender.com/)
 
-  2.- [liga de la Web](https://rococo-caramel-72d2f1.netlify.app/)
+  2.- [liga de la Web](https://web-topicos.netlify.app/)
 
 ## Descripción
 
