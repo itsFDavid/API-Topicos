@@ -1,5 +1,9 @@
 # Proyecto CRUD API con Base de Datos
 
+# Despliegue
+Se utilizo render para desplegar esta api la cual se encuentra en la siguiente liga
+
+
 ## Descripción
 
 Este proyecto es una API RESTful que implementa las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) conectada a una base de datos. La API permite gestionar datos de manera eficiente y segura. El front-end está diseñado para interactuar con esta API, proporcionando una interfaz de usuario amigable.
