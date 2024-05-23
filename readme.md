@@ -1,10 +1,11 @@
 # Proyecto CRUD API con Base de Datos
 
 # Despliegue
-Se utilizo render para desplegar esta api la cual se encuentra en la siguiente liga
+Se utilizo render para desplegar esta API la cual se encuentra en la siguiente liga
 ```bash
    https://api-topicos-77j7.onrender.com/
 ```
+Se utilizo netlifly para desplegar la pagina web que consume la API:
 
 ## Descripción
 
