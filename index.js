@@ -44,11 +44,7 @@ connection.query('SELECT 1 + 1 AS solution', (err, result)=>{
 })
 */
 
-app.get('/', (req, res)=>{
-    res.json({message: 'API route / test'});
-});
-
-app.get("/data", (req, res)=>{
+app.get("/", (req, res)=>{
     connection.query('SELECT * FROM Usuarios', (error, results)=>{
         if(error)
             res.status(500).json({
@@ -61,6 +57,27 @@ app.get("/data", (req, res)=>{
 
 app.post('/', (req, res)=>{
     const { nombre } = req.body;
+
+    if(!nombre)
+        return res.status(400).json({
+            message: 'El campo nombre es requerido'
+        })
+    if(typeof nombre !== 'string')
+        return res.status(400).json({
+            message: 'El campo nombre debe ser de tipo string'
+        })
+    if(nombre.length > 50)
+        return res.status(400).json({
+            message: 'El campo nombre debe tener una longitud maxima de 50 caracteres'
+        })
+    if(nombre.length < 3)
+        return res.status(400).json({
+            message: 'El campo nombre debe tener una longitud minima de 3 caracteres'
+        })
+    if(nombre.trim().length === 0)
+        return res.status(400).json({
+            message: 'El campo nombre no debe contener solo espacios en blanco'
+        })
     connection.query(`INSERT INTO Usuarios VALUES (DEFAULT, ?);`,[nombre], 
     (err, result)=>{
         if(err) 
@@ -76,6 +93,31 @@ app.post('/', (req, res)=>{
 
 app.patch('/', (req, res)=>{
     const { id, nombre } = req.body;
+    if(!id || !nombre)
+        return res.status(400).json({
+            message: 'Los campos id y nombre son requeridos'
+        })
+    if(typeof id !== 'number')
+        return res.status(400).json({
+            message: 'El campo id debe ser de tipo number'
+        })
+    if(typeof nombre !== 'string')
+        return res.status(400).json({
+            message: 'El campo nombre debe ser de tipo string'
+        })
+    if(nombre.length > 50)
+        return res.status(400).json({
+            message: 'El campo nombre debe tener una longitud maxima de 50 caracteres'
+        })
+    if(nombre.length < 3)
+        return res.status(400).json({
+            message: 'El campo nombre debe tener una longitud minima de 3 caracteres'
+        })
+    if(nombre.trim().length === 0)
+        return res.status(400).json({
+            message: 'El campo nombre no debe contener solo espacios en blanco'
+        })
+    
     connection.query(`UPDATE Usuarios SET nombre = ? WHERE id = ?`, [nombre, id], 
     (err, result)=>{
         if(err) 
@@ -91,6 +133,14 @@ app.patch('/', (req, res)=>{
 
 app.delete('/', (req, res)=>{
     const { id } = req.body;
+    if(!id)
+        return res.status(400).json({
+            message: 'El campo id es requerido'
+        })
+    if(typeof id !== 'number')
+        return res.status(400).json({
+            message: 'El campo id debe ser de tipo number'
+        })
     connection.query(`DELETE FROM Usuarios WHERE id = ?`, [id], 
     (err, result)=>{
         if(err) 
