@@ -20,13 +20,7 @@ app.listen(PORT, ()=>{
     console.log(`Servidor iniciado en http://localhost:${PORT}`)
 });
 
-console.log({
-    host: process.env.BD_HOST,
-    user: process.env.BD_USER,
-    password: process.env.BD_PASSWORD,
-    port: process.env.BD_PORT,
-    database: process.env.BD_DATABASE
-});
+
 const connection= mysql.createConnection({
     host: process.env.BD_HOST,
     user: process.env.BD_USER,
