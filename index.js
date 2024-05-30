@@ -78,7 +78,7 @@ app.post('/', (req, res)=>{
         return res.status(400).json({
             message: 'El campo nombre no debe contener solo espacios en blanco'
         })
-    connection.query(`INSERT INTO Usuarios VALUES (DEFAULT, ?);`,[nombre], 
+    connection.query(`INSERT INTO Usuarios (nombre) VALUES (?);`,[nombre], 
     (err, result)=>{
         if(err) 
             res.status(500).json({
